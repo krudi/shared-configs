@@ -1,0 +1,93 @@
+{
+    "name": "@krudi/shared-configs",
+    "description": "Shared configs for Prettier, ESLint (flat), and TypeScript to standardize formatting and linting across JavaScript/TypeScript projects (Node, React, Next.js, monorepos).",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/krudi/shared-configs/LICENSE"
+        }
+    ],
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "krudi",
+            "email": "patryk.kudlik@gmail.com",
+            "url": "https://github.com/krudi/shared-configs"
+        }
+    ],
+    "private": true,
+    "homepage": "https://github.com/krudi/shared-configs#readme",
+    "bugs": {
+        "url": "https://github.com/krudi/shared-configs/issues"
+    },
+    "keywords": [
+        "prettier",
+        "shared-configs",
+        "eslint",
+        "eslint-config",
+        "flat-config",
+        "typescript",
+        "tsconfig",
+        "shared-config",
+        "config",
+        "formatter",
+        "code-style",
+        "linting",
+        "monorepo",
+        "nextjs",
+        "react"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/krudi/shared-configs.git"
+    },
+    "engines": {
+        "node": ">= 22.18.0",
+        "npm": ">= 10.8.1"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        "./prettier-config": {
+            "import": "./dist/shared-configs/index.js",
+            "require": "./dist/shared-configs/index.cjs",
+            "types": "./dist/shared-configs/index.d.ts"
+        },
+        "./eslint-config": {
+            "import": "./dist/eslint-config/index.js",
+            "types": "./dist/eslint-config/index.d.ts"
+        },
+        "./typescript-config/*": "./dist/typescript-config/*.json"
+    },
+    "files": [
+        "README.md",
+        "LICENSE",
+        "dist"
+    ],
+    "packageManager": "pnpm@10.15.0",
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev --parallel",
+        "clean": "turbo clean",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "lint:eslint": "eslint .",
+        "lint:eslint:fix": "eslint . --fix"
+    },
+    "dependencies": {
+        "@krudi/eslint-config": "workspace:*",
+        "@krudi/prettier-config": "workspace:*",
+        "@krudi/typescript-config": "workspace:*"
+    },
+    "devDependencies": {
+        "turbo": "^2.5.6"
+    },
+    "pnpm": {
+        "overrides": {
+            "@types/node": "^22.15.33",
+            "typescript": "~5.8.3"
+        }
+    }
+}

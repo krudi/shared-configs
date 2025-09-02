@@ -1,0 +1,24 @@
+{
+    "$schema": "https://turborepo.com/schema.json",
+    "tasks": {
+        "build": {
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**", "!**/*.tsbuildinfo"]
+        },
+        "dev": {
+            "dependsOn": ["^dev"],
+            "persistent": true,
+            "cache": false
+        },
+        "typecheck": {
+            "dependsOn": ["^typecheck"],
+            "inputs": [
+                "$TURBO_DEFAULT$",
+                "**/*.ts",
+                "**/*.tsx",
+                "tsconfig*.json"
+            ],
+            "outputs": []
+        }
+    }
+}

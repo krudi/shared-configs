@@ -1,0 +1,39 @@
+# Environment variables
+
+**/*.env
+**/!.env-*
+
+# Monorepo directories
+
+**/.turbo
+
+# Dependency directories
+
+**/node_modules
+**/dist
+
+# TypeScript files
+
+**/tsconfig.tsbuildinfo
+**/tsconfig.build.tsbuildinfo
+
+# macOS and iOS files
+
+**/.DS_Store
+**/.AppleDouble
+**/.LSOverride
+
+# Compiled files
+
+**/*.com
+**/*.class
+**/*.dll
+**/*.exe
+**/*.o
+**/*.so
+
+# Secret files
+
+**/*.der
+**/*.key
+**/*.pem

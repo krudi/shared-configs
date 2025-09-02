@@ -1,0 +1,43 @@
+name: Typecheck
+
+on: [push, pull_request]
+
+concurrency:
+    group: typecheck-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+
+jobs:
+    typecheck:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                node-version: ['22.18.0']
+                pnpm-version: ['10.15.0']
+                typecheck-commands:
+                    - pnpm run typecheck
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: ${{ matrix['pnpm-version'] }}
+
+            - name: Set up Node.js environment
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: pnpm
+                  registry-url: https://registry.npmjs.org
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Run linting command (${{ matrix.typecheck-commands }})
+              run: ${{ matrix.typecheck-commands }}

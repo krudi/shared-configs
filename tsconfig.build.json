@@ -1,0 +1,14 @@
+{
+    "files": [],
+    "references": [
+        {
+            "path": "./packages/eslint-config/tsconfig.build.json"
+        },
+        {
+            "path": "./packages/prettier-config/tsconfig.build.json"
+        },
+        {
+            "path": "./packages/typescript-config/tsconfig.build.json"
+        }
+    ]
+}

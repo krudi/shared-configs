@@ -1,0 +1,42 @@
+# Prettier
+
+**/*.md
+
+# Monorepo directories
+
+**.turbo
+
+# Dependency directories
+
+**/node_modules
+
+# Environment / config
+**/.env
+**/.env.*
+**/.turbo
+**/.vscode
+**/.idea
+
+# Ignore Prettier files
+
+**/.prettierignore
+
+# Ignore Git ignore files
+
+**/.gitignore
+**/.gitkeep
+
+# Ignore build output
+
+**/build/**
+**/dist/**
+**/dev-dist/**
+**/.next/**
+**/coverage/**
+**/public/**
+
+# TypeScript build info files
+**/*.tsbuildinfo
+
+# Lock files
+pnpm-lock.json

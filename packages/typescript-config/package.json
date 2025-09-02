@@ -1,0 +1,55 @@
+{
+    "name": "@krudi/typescript-config",
+    "description": "Shared TypeScript configuration for projects to provide consistent compiler settings.",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/krudi/shared-configs/LICENSE"
+        }
+    ],
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "krudi",
+            "email": "patryk.kudlik@gmail.com",
+            "url": "https://github.com/krudi/shared-configs"
+        }
+    ],
+    "private": true,
+    "homepage": "https://github.com/krudi/shared-configs#readme",
+    "bugs": {
+        "url": "https://github.com/krudi/shared-configs/issues"
+    },
+    "keywords": [
+        "typescript",
+        "tsconfig",
+        "config",
+        "configuration",
+        "compiler-options",
+        "shared-config",
+        "monorepo",
+        "nextjs",
+        "expo",
+        "base-config",
+        "build"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/krudi/shared-configs.git"
+    },
+    "engines": {
+        "node": ">= 22.18.0",
+        "npm": ">= 10.8.1"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE",
+        "base.build.json",
+        "base.json",
+        "expo.json",
+        "nextjs.json"
+    ]
+}

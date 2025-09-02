@@ -1,0 +1,13 @@
+{
+    "extends": "@krudi/typescript-config/base.build.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "baseUrl": ".",
+        "tsBuildInfoFile": "tsconfig.build.tsbuildinfo",
+        "sourceMap": true,
+        "noEmit": false
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+}
