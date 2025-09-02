@@ -1,8 +1,9 @@
 name: Publish
 
 on:
-    release:
-        types: [created]
+    push:
+        tags:
+            - '@krudi/*@*'
 
     workflow_dispatch:
 
@@ -45,13 +46,12 @@ jobs:
             - name: Compile and build
               run: pnpm run build
 
-            - name: Publish to NPM registry
+            - name: Publish tagged package
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
                   NPM_CONFIG_PROVENANCE: 'true'
               run: |
-                  if [ "${{ github.event.release.prerelease }}" = "true" ]; then
-                    pnpm -r --filter "./packages/*" publish --access public --no-git-checks --provenance --tag next
-                  else
-                    pnpm -r --filter "./packages/*" publish --access public --no-git-checks --provenance
-                  fi
+                  PKG_TAG="${GITHUB_REF_NAME}"
+                  PKG_NAME="${PKG_TAG%@*}"
+                  echo "Publishing $PKG_NAME"
+                  pnpm -r --filter "$PKG_NAME" publish --access public --no-git-checks --provenance
