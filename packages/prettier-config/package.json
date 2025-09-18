@@ -3,13 +3,11 @@
     "description": "Reusable Prettier configuration to enforce consistent formatting across projects.",
     "license": "MIT",
     "version": "0.1.4",
-    "authors": [
-        {
-            "name": "krudi",
-            "email": "patryk.kudlik@gmail.com",
-            "url": "https://github.com/krudi/prettier-config"
-        }
-    ],
+    "author": {
+        "name": "krudi",
+        "email": "patryk.kudlik@gmail.com",
+        "url": "https://github.com/krudi"
+    },
     "private": false,
     "homepage": "https://github.com/krudi/prettier-config/core#readme",
     "bugs": {

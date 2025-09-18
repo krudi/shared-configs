@@ -3,13 +3,11 @@
     "description": "Reusable ESLint configuration to enforce consistent code style and standards across projects.",
     "license": "MIT",
     "version": "0.1.4",
-    "authors": [
-        {
-            "name": "krudi",
-            "email": "patryk.kudlik@gmail.com",
-            "url": "https://github.com/krudi/shared-configs"
-        }
-    ],
+    "author": {
+        "name": "krudi",
+        "email": "patryk.kudlik@gmail.com",
+        "url": "https://github.com/krudi"
+    },
     "private": false,
     "homepage": "https://github.com/krudi/shared-configs#readme",
     "bugs": {
