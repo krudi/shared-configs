@@ -11,6 +11,7 @@
 **/node_modules
 
 # Environment / config
+
 **/.env
 **/.env.*
 **/.turbo
@@ -36,7 +37,9 @@
 **/public/**
 
 # TypeScript build info files
+
 **/*.tsbuildinfo
 
 # Lock files
+
 package-lock.json
