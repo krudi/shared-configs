@@ -41,6 +41,7 @@
         "dist",
         "README.md",
         "LICENSE",
+        "external-package.json",
         "internal-package.json",
         "base.json",
         "expo.json",
