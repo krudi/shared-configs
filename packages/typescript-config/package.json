@@ -41,7 +41,7 @@
         "dist",
         "README.md",
         "LICENSE",
-        "base.build.json",
+        "internal-package.json",
         "base.json",
         "expo.json",
         "nextjs.json"
