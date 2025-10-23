@@ -4,7 +4,6 @@
         "rootDir": "src",
         "outDir": "dist",
         "baseUrl": ".",
-        "tsBuildInfoFile": "tsconfig.tsbuildinfo",
         "noEmit": true
     },
     "include": ["src/*"],

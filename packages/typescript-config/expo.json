@@ -1,33 +1,10 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "@krudi/typescript-config/base.json",
     "compilerOptions": {
-        "target": "ES2022",
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "strict": true,
-        "checkJs": false,
-        "allowJs": false,
-        "noUncheckedIndexedAccess": true,
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
         "jsx": "react-native",
-        "incremental": true,
-        "lib": ["dom", "dom.iterable", "ES2022"],
-        "noImplicitAny": true,
-        "noImplicitThis": true,
-        "isolatedModules": true,
-        "types": ["react", "react-native", "node"],
-        "paths": {
-            "@/*": ["./src/*"],
-            "@/assets/*": ["./src/assets/*"],
-            "@/components/*": ["./src/components/*"],
-            "@/hooks/*": ["./src/hooks/*"],
-            "@/constants/*": ["./src/constants/*"]
-        }
+        "moduleSuffixes": [".ios", ".android", ".native"]
     },
     "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-    "exclude": ["node_modules", "dist"],
-    "extends": "expo/tsconfig.base"
+    "exclude": ["node_modules"]
 }

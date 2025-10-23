@@ -1,20 +1,24 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
         "target": "ES2022",
+        "lib": ["ES2022"],
         "noEmit": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
+        "moduleDetection": "force",
         "strict": true,
         "checkJs": false,
         "allowJs": false,
         "noUncheckedIndexedAccess": true,
-        "module": "esnext",
-        "moduleResolution": "bundler",
+        "module": "Preserve",
+        "moduleResolution": "Bundler",
         "jsx": "react-jsx",
         "incremental": true,
-        "lib": ["dom", "dom.iterable", "esnext"]
+        "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json",
+        "disableSourceOfProjectReferenceRedirect": true
     }
 }

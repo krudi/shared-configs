@@ -1,11 +1,6 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
     "extends": "@krudi/typescript-config/base.json",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "tsBuildInfoFile": "tsconfig.tsbuildinfo",
-        "noEmit": true,
-        "composite": true
-    },
     "include": ["packages/**/*"],
     "exclude": ["node_modules", "dist"]
 }
