@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/prettier-config",
     "description": "Reusable Prettier configuration to enforce consistent formatting across projects.",
     "license": "MIT",

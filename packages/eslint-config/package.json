@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/eslint-config",
     "description": "Reusable ESLint configuration to enforce consistent code style and standards across projects.",
     "license": "MIT",

@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/typescript-config",
     "description": "Shared TypeScript configuration for projects to provide consistent compiler settings.",
     "license": "MIT",

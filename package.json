@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/shared-configs",
     "description": "Shared configs for Prettier, ESLint (flat), and TypeScript to standardize formatting and linting across JavaScript/TypeScript projects (Node, React, Next.js, monorepos).",
     "license": "MIT",
