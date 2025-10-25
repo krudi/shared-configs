@@ -3,7 +3,7 @@
     "name": "@krudi/prettier-config",
     "description": "Reusable Prettier configuration to enforce consistent formatting across projects.",
     "license": "MIT",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "author": {
         "name": "krudi",
         "email": "patryk.kudlik@gmail.com",
