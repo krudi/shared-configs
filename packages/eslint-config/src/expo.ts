@@ -5,6 +5,7 @@ export default [
     {
         name: '@krudi/eslint-config/expo',
         files: ['**/*.{ts,tsx,js,jsx}'],
+        ignores: ['.expo/**', 'expo-plugins/**'],
         languageOptions: {
             globals: {
                 ...globals.es2021,
