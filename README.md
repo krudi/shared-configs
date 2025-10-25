@@ -61,13 +61,14 @@ import turbo from '@krudi/eslint-config/turbo';
 export default [...base, ...prettier, ...turbo];
 ```
 
-| File                          | Purpose                                                                                   |
-| ----------------------------- | ----------------------------------------------------------------------------------------- |
-| @krudi/eslint-config/base     | Base ESLint rules for general TypeScript/JavaScript projects                              |
-| @krudi/eslint-config/nextjs   | Additional rules and plugins for [Next.js](https://github.com/vercel/next.js) projects    |
-| @krudi/eslint-config/expo     | Extra configuration for [Expo](https://github.com/expo/expo) React Native projects        |
-| @krudi/eslint-config/prettier | Ensures compatibility between ESLint and [Prettier](https://github.com/prettier/prettier) |
-| @krudi/eslint-config/turbo    | Linting rules tailored for [Turborepo](https://github.com/vercel/turborepo) monorepos     |
+| File                          | Purpose                                                                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| @krudi/eslint-config/base      | Base ESLint rules for general TypeScript/JavaScript projects                                                                   |
+| @krudi/eslint-config/react     | React-specific ESLint configuration with hooks, JSX runtime, and [React](https://github.com/facebook/react) global definitions |
+| @krudi/eslint-config/nextjs    | Additional rules and plugins for [Next.js](https://github.com/vercel/next.js) projects                                         |
+| @krudi/eslint-config/expo      | Extra configuration for [Expo](https://github.com/expo/expo) React Native projects                                             |
+| @krudi/eslint-config/prettier  | Ensures compatibility between ESLint and [Prettier](https://github.com/prettier/prettier)                                      |
+| @krudi/eslint-config/turbo     | Linting rules tailored for [Turborepo](https://github.com/vercel/turborepo) monorepos                                          |
 
 #### TypeScript
 
