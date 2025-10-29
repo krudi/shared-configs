@@ -3,7 +3,7 @@
     "extends": "@krudi/typescript-config/base.json",
     "compilerOptions": {
         "jsx": "react-native",
-        "moduleSuffixes": [".ios", ".android", ".native"]
+        "moduleSuffixes": [".ios", ".android", ".native", ""]
     },
     "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
     "exclude": ["node_modules"]
