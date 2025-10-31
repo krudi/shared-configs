@@ -14,7 +14,7 @@
 
 # TypeScript files
 
-.cache
+.cache/tsbuildinfo.json
 
 # macOS and iOS files
 
