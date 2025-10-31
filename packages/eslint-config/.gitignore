@@ -7,6 +7,11 @@
 
 dist
 
+# ESLint files
+
+.cache/.eslintcache
+.eslint-config-inspector
+
 # TypeScript files
 
 .cache/tsbuildinfo.json
