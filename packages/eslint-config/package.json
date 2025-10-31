@@ -83,7 +83,7 @@
         "typecheck": "tsc -p tsconfig.json --noEmit"
     },
     "dependencies": {
-        "@eslint/compat": "^1.4.0",
+        "@eslint/compat": "^1.4.1",
         "@eslint/eslintrc": "^3.3.1",
         "@eslint/js": "^9.37.0",
         "@next/eslint-plugin-next": "^15.5.6",
