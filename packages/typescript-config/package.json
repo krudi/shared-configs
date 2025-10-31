@@ -3,7 +3,7 @@
     "name": "@krudi/typescript-config",
     "description": "Shared TypeScript configuration for projects to provide consistent compiler settings.",
     "license": "MIT",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "author": {
         "name": "krudi",
         "email": "patryk.kudlik@gmail.com",
