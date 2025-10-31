@@ -28,8 +28,7 @@
         "url": "https://github.com/krudi/shared-configs.git"
     },
     "engines": {
-        "node": ">= 22.18.0",
-        "npm": ">= 10.8.1"
+        "node": ">= 22.18.0"
     },
     "type": "module",
     "sideEffects": false,

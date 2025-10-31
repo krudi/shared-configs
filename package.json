@@ -36,10 +36,10 @@
     },
     "engines": {
         "node": ">= 22.18.0",
-        "npm": ">= 10.8.1"
+        "npm": ">= 11.6.2"
     },
+    "packageManager": "npm@11.6.2",
     "type": "module",
-    "packageManager": "npm@10.9.3",
     "workspaces": [
         "packages/*"
     ],
@@ -48,8 +48,8 @@
         "dev": "turbo run dev --parallel",
         "clean": "turbo clean",
         "typecheck": "tsc -p tsconfig.json --noEmit",
-        "lint:eslint": "eslint .",
-        "lint:eslint:fix": "eslint . --fix"
+        "lint:eslint": "eslint . --cache --cache-location .cache/.eslintcache",
+        "lint:eslint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache"
     },
     "dependencies": {
         "@krudi/eslint-config": "workspace:*",
