@@ -2,14 +2,23 @@
     "$schema": "https://json.schemastore.org/tsconfig",
     "extends": "@krudi/typescript-config/base.json",
     "compilerOptions": {
+        "target": "ES2017",
         "lib": ["ES2022", "dom", "dom.iterable"],
         "jsx": "preserve",
+        "module": "esnext",
         "plugins": [
             {
                 "name": "next"
             }
         ]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "include": [
+        "next-env.d.ts",
+        "app/**/*.ts",
+        "app/**/*.tsx",
+        "components/**/*.tsx",
+        ".next/types/**/*.ts",
+        ".next/dev/types/**/*.ts"
+    ],
     "exclude": ["node_modules"]
 }
