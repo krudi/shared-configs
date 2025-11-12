@@ -57,7 +57,7 @@
         "@krudi/typescript-config": "workspace:*"
     },
     "devDependencies": {
-        "turbo": "^2.6.0"
+        "turbo": "^2.6.1"
     },
     "overrides": {
         "@types/node": "^22.15.33",
