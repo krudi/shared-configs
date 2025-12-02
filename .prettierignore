@@ -1,49 +1,39 @@
-# Markdown files
-
+# Markdown
 *.md
 
-# Prettier
+# Dependencies
+node_modules
 
-**/*.md
+# Build output
+build
+dist
+dev-dist
+coverage
+public
+.next
+.nuxt
+.output
+.expo
+docs/.vitepress/cache
+docs/.vitepress/dist
+docs/dev-dist
 
-# Monorepo directories
-
-**.turbo
-
-# Dependency directories
-
-**/node_modules
-
-# Environment / config
-
+# Environment
 **/.env
 **/.env.*
-**/.turbo
+
+# Config
 **/.vscode
 **/.idea
+**/.turbo
 
-# Ignore Prettier files
-
-**/.prettierignore
-
-# Ignore Git ignore files
-
+# Git
 **/.gitignore
 **/.gitkeep
 
-# Ignore build output
-
-**/build/**
-**/dist/**
-**/dev-dist/**
-**/.next/**
-**/coverage/**
-**/public/**
-
-# TypeScript build info files
-
+# Tooling files
+**/.prettierignore
 **/*.tsbuildinfo
 
 # Lock files
-
 package-lock.json

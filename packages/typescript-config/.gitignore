@@ -1,29 +1,27 @@
 # Environment variables
-
 *.env
 !.env-*
 
-# Dependency directories
+# Dependencies
+node_modules
 
+# Build output
 dist
+build
+dev-dist
 
-# ESLint files
-
+# Tooling caches
+.cache/
 .cache/.eslintcache
 .eslint-config-inspector
-
-# TypeScript files
-
 .cache/tsbuildinfo.json
 
-# macOS and iOS files
-
+# OS files
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# Compiled files
-
+# Compiled artifacts
 *.com
 *.class
 *.dll
@@ -31,8 +29,7 @@ dist
 *.o
 *.so
 
-# Secret files
-
+# Secrets
 *.der
 *.key
 *.pem

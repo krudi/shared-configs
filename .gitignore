@@ -1,43 +1,38 @@
-# Environment variables
+# Environment
+*.env
+!.env-*
+**/.env
+**/.env.*
 
-**/*.env
-**/!.env-*
+# Dependencies
+node_modules
 
-# Monorepo directories
+# Build output
+dist
+build
+dev-dist
 
-**/.turbo
-
-# Dependency directories
-
-**/node_modules
-**/dist
-
-# ESLint files
-
+# Tooling caches
+.turbo
+.cache/
 .cache/.eslintcache
 .eslint-config-inspector
-
-# TypeScript files
-
 .cache/tsbuildinfo.json
 
-# macOS and iOS files
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
 
-**/.DS_Store
-**/.AppleDouble
-**/.LSOverride
+# Compiled artifacts
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# Compiled files
-
-**/*.com
-**/*.class
-**/*.dll
-**/*.exe
-**/*.o
-**/*.so
-
-# Secret files
-
-**/*.der
-**/*.key
-**/*.pem
+# Secrets
+*.der
+*.key
+*.pem
