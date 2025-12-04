@@ -15,13 +15,7 @@ export default [
     }),
     {
         name: '@krudi/eslint-config/base',
-        ignores: [
-            '**/node_modules/**',
-            '**/dist/**',
-            '**/build/**',
-            '**/coverage/**',
-            '**/*.tsbuildinfo',
-        ],
+        ignores: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/coverage/**', '**/*.tsbuildinfo'],
     },
     {
         name: '@krudi/eslint-config/js',

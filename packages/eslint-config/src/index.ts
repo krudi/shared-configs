@@ -7,10 +7,7 @@ import prettierConfig from './prettier';
 import reactConfig from './react';
 import turboConfig from './turbo';
 
-const configs: Record<
-    'base' | 'react' | 'nextjs' | 'turbo' | 'expo' | 'prettier',
-    Linter.Config[]
-> = {
+const configs: Record<'base' | 'react' | 'nextjs' | 'turbo' | 'expo' | 'prettier', Linter.Config[]> = {
     base: baseConfig,
     react: reactConfig,
     nextjs: nextConfig,

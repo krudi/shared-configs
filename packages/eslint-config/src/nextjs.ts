@@ -19,12 +19,7 @@ const mergedConfigs = mergeConfigs(
             },
         },
     },
-    ...fixupConfigRules(
-        compat.extends(
-            'plugin:@next/next/core-web-vitals',
-            'plugin:@next/next/recommended'
-        )
-    )
+    ...fixupConfigRules(compat.extends('plugin:@next/next/core-web-vitals', 'plugin:@next/next/recommended'))
 );
 
 export default (await composer(mergedConfigs)
