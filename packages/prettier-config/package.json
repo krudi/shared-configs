@@ -58,6 +58,7 @@
         "typecheck": "tsc -p tsconfig.json --noEmit"
     },
     "dependencies": {
+        "@prettier/plugin-xml": "^3.4.2",
         "prettier": "^3.7.4"
     },
     "devDependencies": {

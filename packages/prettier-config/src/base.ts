@@ -1,7 +1,7 @@
 import type { Options } from 'prettier';
 
 const config: Options = {
-    printWidth: 80,
+    printWidth: 120,
     tabWidth: 4,
     useTabs: false,
     semi: true,
@@ -13,6 +13,11 @@ const config: Options = {
     singleAttributePerLine: true,
     insertPragma: false,
     proseWrap: 'always',
+    plugins: ['@prettier/plugin-xml'],
+    xmlWhitespaceSensitivity: 'ignore',
+    xmlQuoteAttributes: 'preserve',
+    xmlSelfClosingSpace: true,
+    xmlSortAttributesByKey: false,
 } satisfies Options;
 
 export default config as Options;
