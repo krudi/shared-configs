@@ -13,7 +13,7 @@ const config: Options = {
     singleAttributePerLine: true,
     insertPragma: false,
     proseWrap: 'always',
-    plugins: ['@prettier/plugin-xml'],
+    plugins: ['@prettier/plugin-xml', 'prettier-plugin-curly', 'prettier-plugin-packagejson'],
     xmlWhitespaceSensitivity: 'ignore',
     xmlQuoteAttributes: 'preserve',
     xmlSelfClosingSpace: true,
