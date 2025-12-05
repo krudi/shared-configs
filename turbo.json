@@ -1,9 +1,12 @@
 {
     "$schema": "https://turborepo.com/schema.json",
+    "ui": "tui",
     "tasks": {
         "build": {
             "dependsOn": ["^build"],
-            "outputs": ["dist/**"]
+            "outputs": ["dist/**", ".cache/tsbuildinfo.json"],
+            "inputs": ["$TURBO_DEFAULT$", "**/.env*"],
+            "outputLogs": "new-only"
         },
         "dev": {
             "persistent": true,
@@ -15,7 +18,8 @@
         "typecheck": {
             "dependsOn": ["^typecheck"],
             "inputs": ["$TURBO_DEFAULT$", "**/*.ts", "**/*.tsx", "tsconfig*.json"],
-            "outputs": []
+            "outputs": [".cache/tsbuildinfo.json"],
+            "outputLogs": "new-only"
         },
         "lint:eslint": {
             "outputs": [".cache/.eslintcache"],
