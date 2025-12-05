@@ -1,19 +1,9 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/typescript-config",
-    "description": "Shared TypeScript configuration for projects to provide consistent compiler settings.",
-    "license": "MIT",
     "version": "0.1.9",
-    "author": {
-        "name": "krudi",
-        "email": "patryk.kudlik@gmail.com",
-        "url": "https://github.com/krudi"
-    },
     "private": false,
-    "homepage": "https://github.com/krudi/shared-configs#readme",
-    "bugs": {
-        "url": "https://github.com/krudi/shared-configs/issues"
-    },
+    "description": "Shared TypeScript configuration for projects to provide consistent compiler settings.",
     "keywords": [
         "typescript",
         "tsconfig",
@@ -27,15 +17,22 @@
         "base-config",
         "build"
     ],
+    "homepage": "https://github.com/krudi/shared-configs#readme",
+    "bugs": {
+        "url": "https://github.com/krudi/shared-configs/issues"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/krudi/shared-configs.git"
     },
-    "engines": {
-        "node": ">= 22.18.0"
+    "license": "MIT",
+    "author": {
+        "name": "krudi",
+        "email": "patryk.kudlik@gmail.com",
+        "url": "https://github.com/krudi"
     },
-    "type": "module",
     "sideEffects": false,
+    "type": "module",
     "files": [
         "dist",
         "README.md",
@@ -45,5 +42,8 @@
         "base.json",
         "expo.json",
         "nextjs.json"
-    ]
+    ],
+    "engines": {
+        "node": ">= 22.18.0"
+    }
 }

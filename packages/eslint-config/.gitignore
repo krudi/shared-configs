@@ -1,16 +1,16 @@
-# Environment variables
+# Environment files
 *.env
 !.env-*
 
-# Dependencies
+# Dependencies files
 node_modules
 
-# Build output
+# Build output files
 dist
 build
 dev-dist
 
-# Tooling caches
+# Tooling caches files
 .cache/
 .cache/.eslintcache
 .eslint-config-inspector
@@ -21,7 +21,7 @@ dev-dist
 .AppleDouble
 .LSOverride
 
-# Compiled artifacts
+# Compiled artifacts files
 *.com
 *.class
 *.dll
@@ -29,7 +29,7 @@ dev-dist
 *.o
 *.so
 
-# Secrets
+# Secrets files
 *.der
 *.key
 *.pem

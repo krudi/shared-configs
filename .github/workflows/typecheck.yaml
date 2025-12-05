@@ -3,32 +3,32 @@ name: Typecheck
 on: [push, pull_request]
 
 concurrency:
-  group: typecheck-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    group: typecheck-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  typecheck:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        typecheck-commands:
-          - npm run typecheck
+    typecheck:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                typecheck-commands:
+                    - npm run typecheck
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
 
-      - name: Set up Node.js environment
-        uses: actions/setup-node@v6
-        with:
-          cache: npm
+            - name: Set up Node.js environment
+              uses: actions/setup-node@v6
+              with:
+                  cache: npm
 
-      - name: Install dependencies
-        run: npm install
+            - name: Install dependencies
+              run: npm install
 
-      - name: Run typecheck command (${{ matrix.typecheck-commands }})
-        run: ${{ matrix.typecheck-commands }}
+            - name: Run typecheck command (${{ matrix.typecheck-commands }})
+              run: ${{ matrix.typecheck-commands }}

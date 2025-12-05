@@ -1,19 +1,9 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/eslint-config",
-    "description": "Reusable ESLint configuration to enforce consistent code style and standards across projects.",
-    "license": "MIT",
     "version": "0.1.7",
-    "author": {
-        "name": "krudi",
-        "email": "patryk.kudlik@gmail.com",
-        "url": "https://github.com/krudi"
-    },
     "private": false,
-    "homepage": "https://github.com/krudi/shared-configs#readme",
-    "bugs": {
-        "url": "https://github.com/krudi/shared-config/sissues"
-    },
+    "description": "Reusable ESLint configuration to enforce consistent code style and standards across projects.",
     "keywords": [
         "eslint",
         "eslintconfig",
@@ -30,48 +20,55 @@
         "turborepo",
         "shared-config"
     ],
+    "homepage": "https://github.com/krudi/shared-configs#readme",
+    "bugs": {
+        "url": "https://github.com/krudi/shared-config/sissues"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/krudi/shared-configs.git"
     },
-    "engines": {
-        "node": ">= 22.18.0"
+    "license": "MIT",
+    "author": {
+        "name": "krudi",
+        "email": "patryk.kudlik@gmail.com",
+        "url": "https://github.com/krudi"
     },
-    "type": "module",
     "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/base.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./base": {
+            "types": "./dist/base.d.ts",
+            "import": "./dist/base.js"
+        },
+        "./react": {
+            "types": "./dist/react.d.ts",
+            "import": "./dist/react.js"
+        },
+        "./nextjs": {
+            "types": "./dist/nextjs.d.ts",
+            "import": "./dist/nextjs.js"
+        },
+        "./expo": {
+            "types": "./dist/expo.d.ts",
+            "import": "./dist/expo.js"
+        },
+        "./prettier": {
+            "types": "./dist/prettier.d.ts",
+            "import": "./dist/prettier.js"
+        },
+        "./turbo": {
+            "types": "./dist/turbo.d.ts",
+            "import": "./dist/turbo.js"
+        }
+    },
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "exports": {
-        ".": {
-            "import": "./dist/index.js",
-            "types": "./dist/base.d.ts"
-        },
-        "./base": {
-            "import": "./dist/base.js",
-            "types": "./dist/base.d.ts"
-        },
-        "./react": {
-            "import": "./dist/react.js",
-            "types": "./dist/react.d.ts"
-        },
-        "./nextjs": {
-            "import": "./dist/nextjs.js",
-            "types": "./dist/nextjs.d.ts"
-        },
-        "./expo": {
-            "import": "./dist/expo.js",
-            "types": "./dist/expo.d.ts"
-        },
-        "./prettier": {
-            "import": "./dist/prettier.js",
-            "types": "./dist/prettier.d.ts"
-        },
-        "./turbo": {
-            "import": "./dist/turbo.js",
-            "types": "./dist/turbo.d.ts"
-        }
-    },
     "files": [
         "dist",
         "README.md",
@@ -105,5 +102,8 @@
     },
     "devDependencies": {
         "jiti": "^2.6.1"
+    },
+    "engines": {
+        "node": ">= 22.18.0"
     }
 }
