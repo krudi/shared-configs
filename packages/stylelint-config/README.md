@@ -1,12 +1,14 @@
 # @krudi/stylelint-config
 
-Shared Stylelint config used across projects. It extends `stylelint-config-standard` and `stylelint-order`, adds a
-handful of sensible rules, and ignores compiled/vendor assets.
+Shared Stylelint config used across projects. It extends
+[stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) and
+[stylelint-order](https://github.com/hudochenkov/stylelint-order), adds a handful of sensible rules, and ignores
+compiled/vendor assets.
 
 ## Install
 
 ```sh
-npm install -D @krudi/stylelint-config stylelint stylelint-config-standard stylelint-order
+npm install -D @krudi/stylelint-config
 ```
 
 ## Usage

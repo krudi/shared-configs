@@ -1,11 +1,11 @@
 # @krudi/shared-configs
 
 A collection of reusable configuration packages for Prettier, [ESLint](https://github.com/eslint/eslint),
-[Stylelint](https://github.com/stylelint/stylelint) and
-[TypeScript](https://github.com/microsoft/TypeScript). The goal is to enforce a consistent coding style, linting, and
-compiler setup across multiple projects ([Node](https://github.com/nodejs/node),
-[React](https://github.com/facebook/react/), [Next.js](https://github.com/vercel/next.js),
-[Expo](https://github.com/expo/expo), monorepos ([Turbo](https://github.com/vercel/turborepo))).
+[Stylelint](https://github.com/stylelint/stylelint) and [TypeScript](https://github.com/microsoft/TypeScript). The goal
+is to enforce a consistent coding style, linting, and compiler setup across multiple projects
+([Node](https://github.com/nodejs/node), [React](https://github.com/facebook/react/),
+[Next.js](https://github.com/vercel/next.js), [Expo](https://github.com/expo/expo), monorepos
+([Turbo](https://github.com/vercel/turborepo))).
 
 ### Quick start
 
@@ -71,7 +71,7 @@ export default [...base, ...prettier, ...turbo];
 Install the Stylelint config and its peers:
 
 ```sh
-npm install -D @krudi/stylelint-config stylelint stylelint-config-standard stylelint-order
+npm install -D @krudi/stylelint-config
 ```
 
 `stylelint.config.cjs`:
