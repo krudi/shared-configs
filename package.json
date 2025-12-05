@@ -1,19 +1,9 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/shared-configs",
-    "description": "Shared configs for Prettier, ESLint (flat), and TypeScript to standardize formatting and linting across JavaScript/TypeScript projects (Node, React, Next.js, monorepos).",
     "version": "0.1.0",
-    "license": "MIT",
-    "author": {
-        "name": "krudi",
-        "email": "patryk.kudlik@gmail.com",
-        "url": "https://github.com/krudi"
-    },
     "private": true,
-    "homepage": "https://github.com/krudi/shared-configs#readme",
-    "bugs": {
-        "url": "https://github.com/krudi/shared-configs/issues"
-    },
+    "description": "Shared configs for Prettier, ESLint (flat), and TypeScript to standardize formatting and linting across JavaScript/TypeScript projects (Node, React, Next.js, monorepos).",
     "keywords": [
         "prettier",
         "shared-configs",
@@ -31,37 +21,50 @@
         "nextjs",
         "react"
     ],
+    "homepage": "https://github.com/krudi/shared-configs#readme",
+    "bugs": {
+        "url": "https://github.com/krudi/shared-configs/issues"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/krudi/shared-configs.git"
     },
-    "engines": {
-        "node": ">= 22.18.0",
-        "npm": ">= 11.6.2"
+    "license": "MIT",
+    "author": {
+        "name": "krudi",
+        "email": "patryk.kudlik@gmail.com",
+        "url": "https://github.com/krudi"
     },
-    "packageManager": "npm@11.6.2",
     "type": "module",
     "workspaces": [
         "packages/*"
     ],
     "scripts": {
         "build": "turbo run build",
-        "dev": "turbo run dev --parallel",
         "clean": "turbo clean",
-        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "dev": "turbo run dev --parallel",
         "lint:eslint": "eslint . --cache --cache-location .cache/.eslintcache",
-        "lint:eslint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache"
-    },
-    "dependencies": {
-        "@krudi/eslint-config": "workspace:*",
-        "@krudi/prettier-config": "workspace:*",
-        "@krudi/typescript-config": "workspace:*"
-    },
-    "devDependencies": {
-        "turbo": "^2.6.3"
+        "lint:eslint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+        "lint:prettier": "prettier --check . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
+        "lint:prettier:fix": "prettier --write . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
+        "typecheck": "tsc -p tsconfig.json --noEmit"
     },
     "overrides": {
         "@types/node": "^22.15.33",
         "typescript": "~5.8.3"
+    },
+    "dependencies": {
+        "@krudi/eslint-config": "*",
+        "@krudi/prettier-config": "*",
+        "@krudi/stylelint-config": "*",
+        "@krudi/typescript-config": "*"
+    },
+    "devDependencies": {
+        "turbo": "^2.6.2"
+    },
+    "packageManager": "npm@11.6.2",
+    "engines": {
+        "node": ">= 22.18.0",
+        "npm": ">= 11.6.2"
     }
 }

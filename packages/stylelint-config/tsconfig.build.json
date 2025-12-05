@@ -1,0 +1,5 @@
+{
+    "extends": "@krudi/typescript-config/external-package.json",
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}

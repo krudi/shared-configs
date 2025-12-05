@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "@krudi/stylelint-config",
+    "version": "0.1.0",
+    "description": "Shared Stylelint configuration to reuse across projects.",
+    "keywords": [
+        "stylelint",
+        "stylelint-config",
+        "css",
+        "lint",
+        "shared-config"
+    ],
+    "homepage": "https://github.com/krudi/shared-configs#readme",
+    "bugs": {
+        "url": "https://github.com/krudi/shared-configs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/krudi/shared-configs.git"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "krudi",
+        "email": "patryk.kudlik@gmail.com",
+        "url": "https://github.com/krudi"
+    },
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.js"
+        },
+        "./base": {
+            "types": "./dist/base.d.ts",
+            "require": "./dist/base.cjs",
+            "import": "./dist/base.js"
+        }
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsc -b tsconfig.build.json",
+        "dev": "tsc -p tsconfig.json --watch",
+        "typecheck": "tsc -p tsconfig.json --noEmit"
+    },
+    "dependencies": {
+        "stylelint": "^16.0.0",
+        "stylelint-config-standard": "^39.0.1",
+        "stylelint-order": "^7.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.18.0",
+        "typescript": "^5.9.2"
+    },
+    "engines": {
+        "node": ">= 22.18.0"
+    }
+}
