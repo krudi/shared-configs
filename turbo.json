@@ -14,18 +14,21 @@
         },
         "typecheck": {
             "dependsOn": ["^typecheck"],
-            "inputs": [
-                "$TURBO_DEFAULT$",
-                "**/*.ts",
-                "**/*.tsx",
-                "tsconfig*.json"
-            ],
+            "inputs": ["$TURBO_DEFAULT$", "**/*.ts", "**/*.tsx", "tsconfig*.json"],
             "outputs": []
         },
         "lint:eslint": {
-            "outputs": []
+            "outputs": [".cache/.eslintcache"],
+            "outputLogs": "new-only"
         },
         "lint:eslint:fix": {
+            "cache": false
+        },
+        "lint:prettier": {
+            "outputs": [".cache/.prettiercache"],
+            "outputLogs": "new-only"
+        },
+        "lint:prettier:fix": {
             "cache": false
         }
     }
