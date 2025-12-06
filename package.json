@@ -60,11 +60,11 @@
         "@krudi/typescript-config": "*"
     },
     "devDependencies": {
-        "turbo": "^2.6.2"
+        "turbo": "^2.6.3"
     },
-    "packageManager": "npm@11.6.2",
+    "packageManager": "npm@11.6.4",
     "engines": {
         "node": ">= 22.18.0",
-        "npm": ">= 11.6.2"
+        "npm": ">= 11.6.4"
     }
 }
