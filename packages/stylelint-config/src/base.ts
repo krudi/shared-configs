@@ -2,13 +2,6 @@ import type { Config } from 'stylelint';
 
 const config: Config = {
     extends: ['stylelint-config-standard', 'stylelint-order'],
-    overrides: [
-        {
-            files: ['**/*.css'],
-            customSyntax: 'postcss',
-        },
-    ],
-    ignoreFiles: ['**/*.js', '**/*.ts', 'node_modules/**/*.css', 'vendor/**/*.css', 'public/**/*.css'],
     rules: {
         'no-duplicate-selectors': true,
         'color-hex-length': 'long',
