@@ -1,34 +1,37 @@
 name: Typecheck
 
-on: [push, pull_request]
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 concurrency:
-    group: typecheck-${{ github.workflow }}-${{ github.ref }}
-    cancel-in-progress: true
+  group: typecheck-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
-    contents: read
+  contents: read
 
 jobs:
-    typecheck:
-        runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            matrix:
-                typecheck-commands:
-                    - npm run typecheck
+  typecheck:
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        typecheck-commands:
+          - "npm run typecheck"
 
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v6
+    steps:
+      - uses: krudi/reusable-actions/.github/actions/github-checkout@main
+      - uses: krudi/reusable-actions/.github/actions/node-setup@main
+        with:
+          cache: npm
+          node_version_file: .nvmrc
+      - uses: krudi/reusable-actions/.github/actions/node-install@main
 
-            - name: Set up Node.js environment
-              uses: actions/setup-node@v6
-              with:
-                  cache: npm
-
-            - name: Install dependencies
-              run: npm install
-
-            - name: Run typecheck command (${{ matrix.typecheck-commands }})
-              run: ${{ matrix.typecheck-commands }}
+      - uses: krudi/reusable-actions/.github/actions/ci-command@main
+        with:
+          command: ${{ matrix.typecheck-commands }}
