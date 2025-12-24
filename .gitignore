@@ -1,8 +1,6 @@
 # Environment files
 *.env
 !.env-*
-**/.env
-**/.env.*
 
 # Dependencies files
 node_modules
@@ -14,9 +12,10 @@ dev-dist
 
 # Tooling caches files
 .turbo
-.cache/
 .cache/.eslintcache
 .eslint-config-inspector
+.cache/.prettiercache
+.cache/.stylelintcache
 .cache/tsbuildinfo.json
 
 # OS files

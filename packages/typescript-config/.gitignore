@@ -11,9 +11,11 @@ build
 dev-dist
 
 # Tooling caches files
-.cache/
+.turbo
 .cache/.eslintcache
 .eslint-config-inspector
+.cache/.prettiercache
+.cache/.stylelintcache
 .cache/tsbuildinfo.json
 
 # OS files
