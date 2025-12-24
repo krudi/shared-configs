@@ -1,32 +1,32 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+    pull_request:
+        types:
+            - opened
+            - synchronize
+            - reopened
 
 concurrency:
-  group: build-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    group: build-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: krudi/reusable-actions/.github/actions/github-checkout@main
-      - uses: krudi/reusable-actions/.github/actions/node-setup@main
-        with:
-          cache: npm
-          node_version_file: .nvmrc
-      - uses: krudi/reusable-actions/.github/actions/node-install@main
-      - uses: krudi/reusable-actions/.github/actions/node-build@main
+        steps:
+            - uses: krudi/reusable-actions/.github/actions/github-checkout@main
+            - uses: krudi/reusable-actions/.github/actions/node-setup@main
+              with:
+                  cache: npm
+                  node_version_file: .nvmrc
+            - uses: krudi/reusable-actions/.github/actions/node-install@main
+            - uses: krudi/reusable-actions/.github/actions/node-build@main

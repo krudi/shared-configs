@@ -1,39 +1,39 @@
 name: Publish
 
 on:
-  push:
-    tags:
-      - "@krudi/*@*"
+    push:
+        tags:
+            - '@krudi/*@*'
 
-  workflow_dispatch:
+    workflow_dispatch:
 
 concurrency:
-  group: publish-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    group: publish-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 permissions:
-  contents: write
-  id-token: write
+    contents: write
+    id-token: write
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: krudi/reusable-actions/.github/actions/github-checkout@main
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: krudi/reusable-actions/.github/actions/github-checkout@main
 
-      - uses: krudi/reusable-actions/.github/actions/node-setup@main
-        with:
-          cache: npm
-          node_version_file: .nvmrc
+            - uses: krudi/reusable-actions/.github/actions/node-setup@main
+              with:
+                  cache: npm
+                  node_version_file: .nvmrc
 
-      - uses: krudi/reusable-actions/.github/actions/node-install@main
+            - uses: krudi/reusable-actions/.github/actions/node-install@main
 
-      - uses: krudi/reusable-actions/.github/actions/node-build@main
+            - uses: krudi/reusable-actions/.github/actions/node-build@main
 
-      - uses: krudi/reusable-actions/.github/actions/npm-publish@main
-        with:
-          tag: ${{ github.ref_name }}
-          access: public
-          provenance: true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - uses: krudi/reusable-actions/.github/actions/npm-publish@main
+              with:
+                  tag: ${{ github.ref_name }}
+                  access: public
+                  provenance: true
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
