@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "name": "@krudi/eslint-config",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "private": false,
     "description": "Reusable ESLint configuration to enforce consistent code style and standards across projects.",
     "keywords": [
