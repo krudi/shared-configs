@@ -64,6 +64,10 @@
         "./turbo": {
             "types": "./dist/turbo.d.ts",
             "import": "./dist/turbo.js"
+        },
+        "./storybook": {
+            "types": "./dist/storybook.d.ts",
+            "import": "./dist/storybook.js"
         }
     },
     "main": "./dist/index.js",
@@ -77,6 +81,10 @@
     "scripts": {
         "build": "tsc -b tsconfig.build.json",
         "dev": "tsc -p tsconfig.json --watch",
+        "lint:eslint": "eslint . --cache --cache-location .cache/.eslintcache",
+        "lint:eslint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+        "lint:prettier": "prettier --check . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
+        "lint:prettier:fix": "prettier --write . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
         "typecheck": "tsc -p tsconfig.json --noEmit"
     },
     "dependencies": {
@@ -93,6 +101,7 @@
         "eslint-plugin-prettier": "^5.5.4",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.0.1",
+        "eslint-plugin-storybook": "^10.1.10",
         "eslint-plugin-simple-import-sort": "^12.1.1",
         "eslint-plugin-turbo": "^2.7.1",
         "globals": "^15.15.0",
