@@ -49,6 +49,10 @@
     "scripts": {
         "build": "tsc -b tsconfig.build.json",
         "dev": "tsc -p tsconfig.json --watch",
+        "lint:eslint": "eslint . --cache --cache-location .cache/.eslintcache",
+        "lint:eslint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+        "lint:prettier": "prettier --check . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
+        "lint:prettier:fix": "prettier --write . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
         "typecheck": "tsc -p tsconfig.json --noEmit"
     },
     "dependencies": {
