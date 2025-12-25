@@ -7,13 +7,6 @@ dist
 dev-dist
 coverage
 public
-.next
-.nuxt
-.output
-.expo
-docs/.vitepress/cache
-docs/.vitepress/dist
-docs/dev-dist
 
 # Environment files
 *.env
