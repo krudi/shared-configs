@@ -51,7 +51,7 @@
     },
     "overrides": {
         "@types/node": "^22.15.33",
-        "typescript": "~5.8.3"
+        "typescript": "^5.8.3"
     },
     "dependencies": {
         "@krudi/eslint-config": "*",
