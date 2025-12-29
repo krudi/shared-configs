@@ -58,7 +58,7 @@
     "dependencies": {
         "stylelint": "^16.0.0",
         "stylelint-config-standard": "^39.0.1",
-        "stylelint-order": "^7.0.0"
+        "stylelint-order": "^7.0.1"
     },
     "devDependencies": {
         "@types/node": "^22.18.0",
