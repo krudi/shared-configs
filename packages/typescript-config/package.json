@@ -23,7 +23,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/krudi/shared-configs.git"
+        "url": "git+https://github.com/krudi/shared-configs.git"
     },
     "license": "MIT",
     "author": {
@@ -31,7 +31,6 @@
         "email": "patryk.kudlik@gmail.com",
         "url": "https://github.com/krudi"
     },
-    "sideEffects": false,
     "type": "module",
     "files": [
         "dist",
