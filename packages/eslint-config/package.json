@@ -63,10 +63,6 @@
         "./turbo": {
             "types": "./dist/turbo.d.ts",
             "import": "./dist/turbo.js"
-        },
-        "./storybook": {
-            "types": "./dist/storybook.d.ts",
-            "import": "./dist/storybook.js"
         }
     },
     "main": "./dist/index.js",
@@ -101,7 +97,6 @@
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.0.1",
         "eslint-plugin-simple-import-sort": "^12.1.1",
-        "eslint-plugin-storybook": "^10.1.11",
         "eslint-plugin-turbo": "^2.7.4",
         "globals": "^15.15.0",
         "prettier": "^3.7.4",
