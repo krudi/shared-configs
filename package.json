@@ -60,7 +60,7 @@
         "@krudi/typescript-config": "*"
     },
     "devDependencies": {
-        "turbo": "^2.7.5"
+        "turbo": "^2.7.6"
     },
     "packageManager": "npm@11.6.4",
     "engines": {
