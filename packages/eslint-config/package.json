@@ -87,7 +87,7 @@
         "@eslint/eslintrc": "^3.3.3",
         "@eslint/js": "^9.39.2",
         "@next/eslint-plugin-next": "^15.5.12",
-        "@types/node": "^22.18.0",
+        "@types/node": "^22.19.11",
         "eslint": "^9.39.2",
         "eslint-config-expo": "^9.2.0",
         "eslint-config-flat-gitignore": "^2.1.0",
