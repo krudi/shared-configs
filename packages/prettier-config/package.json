@@ -64,7 +64,7 @@
         "prettier-plugin-packagejson": "^2.5.22"
     },
     "devDependencies": {
-        "@types/node": "^22.19.11",
+        "@types/node": "^22.19.13",
         "typescript": "^5.9.2"
     },
     "engines": {
