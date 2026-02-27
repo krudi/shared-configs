@@ -60,7 +60,7 @@
         "stylelint-order": "^7.0.1"
     },
     "devDependencies": {
-        "@types/node": "^22.19.11",
+        "@types/node": "^22.19.13",
         "typescript": "^5.9.2"
     },
     "engines": {
