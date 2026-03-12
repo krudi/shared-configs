@@ -25,7 +25,7 @@
     "author": {
         "name": "krudi",
         "email": "patryk.kudlik@gmail.com",
-        "url": "https://github.com/krudi"
+        "url": "https://krudi.io"
     },
     "type": "module",
     "exports": {
@@ -68,6 +68,6 @@
         "typescript": "^5.9.2"
     },
     "engines": {
-        "node": ">= 22.18.0"
+        "node": ">= 24.14.0"
     }
 }

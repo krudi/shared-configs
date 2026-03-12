@@ -29,7 +29,7 @@
     "author": {
         "name": "krudi",
         "email": "patryk.kudlik@gmail.com",
-        "url": "https://github.com/krudi"
+        "url": "https://krudi.io"
     },
     "type": "module",
     "files": [
@@ -47,6 +47,6 @@
         "lint:prettier:fix": "prettier --write . --cache --cache-strategy metadata --cache-location .cache/.prettiercache"
     },
     "engines": {
-        "node": ">= 22.18.0"
+        "node": ">= 24.14.0"
     }
 }
