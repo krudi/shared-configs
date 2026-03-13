@@ -1,0 +1,24 @@
+name: Publish stylelint-config
+
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+
+concurrency:
+  group: publish-stylelint-config-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, '@krudi/stylelint-config@') }}
+    permissions:
+      contents: read
+      id-token: write
+    uses: krudi/reusable-actions/.github/workflows/publish-npm.yaml@main
+    with:
+      workspace: "@krudi/stylelint-config"
+      node_version_file: .nvmrc
+    secrets:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
