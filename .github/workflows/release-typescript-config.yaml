@@ -21,9 +21,11 @@ jobs:
   release:
     permissions:
       contents: write
-    uses: krudi/reusable-actions/.github/workflows/create-release.yaml@main
+      id-token: write
+    uses: krudi/reusable-actions/.github/workflows/release-and-publish.yaml@main
     with:
       version: ${{ inputs.version }}
+      publish_target: npm
       create_latest: ${{ inputs.create_latest }}
       working_directory: .
       workspace: "@krudi/typescript-config"
@@ -32,3 +34,5 @@ jobs:
       node_version_file: .nvmrc
       tag_prefix: "@krudi/typescript-config@"
       commit_message: "chore(release): bump @krudi/typescript-config from {old} to {new}"
+    secrets:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
