@@ -18,21 +18,175 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Validate release input
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "Version must be a semantic version like 0.5.0 or 0.5.0-beta.1."
+            exit 1
+          fi
+
   release:
+    needs: validate
+    runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      tag: ${{ steps.package-meta.outputs.tag }}
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: npm
+          node-version-file: .nvmrc
+
+      - name: Read current package metadata
+        id: package-meta
+        shell: bash
+        env:
+          NEW_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          OLD_VERSION="$(node -p "require('./packages/eslint-config/package.json').version")"
+          TAG_NAME="@krudi/eslint-config@${NEW_VERSION}"
+          if [ "$OLD_VERSION" = "$NEW_VERSION" ]; then
+            echo "Version ${NEW_VERSION} is already set in packages/eslint-config/package.json."
+            exit 1
+          fi
+          echo "old_version=$OLD_VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure release tag does not exist
+        shell: bash
+        env:
+          TAG_NAME: ${{ steps.package-meta.outputs.tag }}
+        run: |
+          set -euo pipefail
+          git fetch --tags origin
+          if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
+            echo "Tag '$TAG_NAME' already exists locally."
+            exit 1
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG_NAME" >/dev/null 2>&1; then
+            echo "Tag '$TAG_NAME' already exists on origin."
+            exit 1
+          fi
+
+      - name: Bump package version
+        shell: bash
+        env:
+          NEW_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          npm version "$NEW_VERSION" --workspace="@krudi/eslint-config" --no-git-tag-version
+
+      - name: Verify release file version
+        shell: bash
+        env:
+          NEW_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          ACTUAL_VERSION="$(node -p "require('./packages/eslint-config/package.json').version")"
+          if [ "$ACTUAL_VERSION" != "$NEW_VERSION" ]; then
+            echo "Expected packages/eslint-config/package.json version '$NEW_VERSION' but found '$ACTUAL_VERSION'."
+            exit 1
+          fi
+
+      - name: Ensure only expected files changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t changed_files < <(git status --porcelain | awk '{print $2}')
+          if [ ${#changed_files[@]} -eq 0 ]; then
+            echo "No files changed after version bump."
+            exit 1
+          fi
+          for file in "${changed_files[@]}"; do
+            if [ "$file" != "packages/eslint-config/package.json" ] && [ "$file" != "package-lock.json" ]; then
+              echo "Unexpected changed file after version bump: $file"
+              exit 1
+            fi
+          done
+
+      - name: Commit version bump
+        shell: bash
+        env:
+          OLD_VERSION: ${{ steps.package-meta.outputs.old_version }}
+          NEW_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/eslint-config/package.json package-lock.json
+          git commit -m "chore(release): bump @krudi/eslint-config from ${OLD_VERSION} to ${NEW_VERSION}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Create tag
+        shell: bash
+        env:
+          TAG_NAME: ${{ steps.package-meta.outputs.tag }}
+        run: |
+          set -euo pipefail
+          git tag "$TAG_NAME"
+          git push origin "$TAG_NAME"
+
+      - name: Create GitHub release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ steps.package-meta.outputs.tag }}
+          CREATE_LATEST: ${{ inputs.create_latest }}
+        run: |
+          set -euo pipefail
+          LATEST_FLAG="--latest=false"
+          if [ "$CREATE_LATEST" = "true" ]; then
+            LATEST_FLAG="--latest"
+          fi
+          gh release create "$TAG_NAME" --title "$TAG_NAME" --generate-notes $LATEST_FLAG
+
+  publish:
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
       id-token: write
-    uses: krudi/reusable-actions/.github/workflows/release-and-publish.yaml@main
-    with:
-      version: ${{ inputs.version }}
-      publish_target: npm
-      create_latest: ${{ inputs.create_latest }}
-      working_directory: .
-      workspace: "@krudi/eslint-config"
-      package_json_path: packages/eslint-config/package.json
-      package_lock_path: package-lock.json
-      node_version_file: .nvmrc
-      tag_prefix: "@krudi/eslint-config@"
-      commit_message: "chore(release): bump @krudi/eslint-config from {old} to {new}"
-    secrets:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+
+      - name: Checkout release tag
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: ${{ needs.release.outputs.tag }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: npm
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Configure npm auth
+        shell: bash
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm config set "//registry.npmjs.org/:_authToken" "$NODE_AUTH_TOKEN"
+
+      - name: Publish package
+        run: npm publish --workspace="@krudi/eslint-config" --access public --provenance
