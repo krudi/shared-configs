@@ -43,8 +43,8 @@
         "build": "turbo run build",
         "clean": "turbo clean",
         "dev": "turbo run dev --parallel",
-        "lint:eslint": "eslint . --cache --cache-location .cache/.eslintcache",
-        "lint:eslint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+        "lint:eslint": "eslint --flag unstable_native_nodejs_ts_config . --cache --cache-location .cache/.eslintcache",
+        "lint:eslint:fix": "eslint --flag unstable_native_nodejs_ts_config . --fix --cache --cache-location .cache/.eslintcache",
         "lint:prettier": "prettier --check . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
         "lint:prettier:fix": "prettier --write . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
         "typecheck": "tsc -p tsconfig.json --noEmit"
@@ -60,9 +60,9 @@
         "@krudi/typescript-config": "*"
     },
     "devDependencies": {
-        "turbo": "^2.8.14"
+        "turbo": "^2.9.4"
     },
-    "packageManager": "npm@11.6.4",
+    "packageManager": "npm@11.12.1",
     "engines": {
         "node": ">= 24.14.0",
         "npm": ">= 11.6.4"

@@ -51,8 +51,8 @@
     "scripts": {
         "build": "tsc -b tsconfig.build.json",
         "dev": "tsc -p tsconfig.json --watch",
-        "lint:eslint": "eslint . --cache --cache-location .cache/.eslintcache",
-        "lint:eslint:fix": "eslint . --fix --cache-location .cache/.eslintcache",
+        "lint:eslint": "eslint --flag unstable_native_nodejs_ts_config . --cache --cache-location .cache/.eslintcache",
+        "lint:eslint:fix": "eslint --flag unstable_native_nodejs_ts_config . --fix --cache-location .cache/.eslintcache",
         "lint:prettier": "prettier --check . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
         "lint:prettier:fix": "prettier --write . --cache --cache-strategy metadata --cache-location .cache/.prettiercache",
         "typecheck": "tsc -p tsconfig.json --noEmit"
@@ -61,11 +61,11 @@
         "@prettier/plugin-xml": "^3.4.2",
         "prettier": "^3.8.1",
         "prettier-plugin-curly": "^0.4.1",
-        "prettier-plugin-packagejson": "^2.5.22"
+        "prettier-plugin-packagejson": "^3.0.2"
     },
     "devDependencies": {
-        "@types/node": "^22.19.15",
-        "typescript": "^5.9.2"
+        "@types/node": "^25.5.2",
+        "typescript": "^6.0.2"
     },
     "engines": {
         "node": ">= 24.14.0"
