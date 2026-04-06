@@ -9,22 +9,15 @@ projects.
 
 ## Usage
 
-Create `prettier.config.mjs` (or `prettier.config.js`) in your project root and extend the configuration you need:
+Create `prettier.config.ts` in your project root and extend the configuration you need:
 
-```js
-// ESM
+```ts
 import base from '@krudi/prettier-config/base';
+import type { Options } from 'prettier';
 
-/** @type {import("prettier").Options} */
-export default {
+const config: Options = {
     ...base,
 };
 
-// CommonJS
-const base = require('@krudi/prettier-config/base');
-
-/** @type {import('prettier').Options} */
-module.exports = {
-    ...base,
-};
+export default config;
 ```

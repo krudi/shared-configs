@@ -9,9 +9,9 @@ projects.
 
 ## Usage
 
-Create `eslint.config.mjs` (or `eslint.config.ts`) in your project root and extend the configuration you need:
+Create `eslint.config.ts` in your project root and extend the configuration you need:
 
-```js
+```ts
 import eslintConfig from '@krudi/eslint-config';
 
 export default [eslintConfig.base, eslintConfig.prettier, eslintConfig.turbo];

@@ -13,18 +13,12 @@ npm install -D @krudi/stylelint-config
 
 ## Usage
 
-`stylelint.config.cjs`:
+`stylelint.config.ts`:
 
-```js
-module.exports = {
-    extends: ['@krudi/stylelint-config'],
-};
-```
+```ts
+import type { Config } from 'stylelint';
 
-`stylelint.config.mjs`:
-
-```js
 export default {
     extends: ['@krudi/stylelint-config'],
-};
+} satisfies Config;
 ```

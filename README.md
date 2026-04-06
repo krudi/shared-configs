@@ -25,31 +25,24 @@ Each package can be installed individually depending on your needs.
 
 #### Prettier
 
-Create `prettier.config.mjs` (or `prettier.config.js`) in your project root and extend the configuration you need:
+Create `prettier.config.ts` in your project root and extend the configuration you need:
 
-```js
-// ESM
+```ts
 import base from '@krudi/prettier-config/base';
+import type { Options } from 'prettier';
 
-/** @type {import("prettier").Options} */
-export default {
+const config: Options = {
     ...base,
 };
 
-// CommonJS
-const base = require('@krudi/prettier-config/base');
-
-/** @type {import('prettier').Options} */
-module.exports = {
-    ...base,
-};
+export default config;
 ```
 
 #### ESLint (flat config)
 
-Create `eslint.config.mjs` (or `eslint.config.ts`) in your project root and extend the configuration you need:
+Create `eslint.config.ts` in your project root and extend the configuration you need:
 
-```js
+```ts
 import base from '@krudi/eslint-config/base';
 import prettier from '@krudi/eslint-config/prettier';
 import turbo from '@krudi/eslint-config/turbo';
@@ -74,20 +67,14 @@ Install the Stylelint config and its peers:
 npm install -D @krudi/stylelint-config
 ```
 
-`stylelint.config.cjs`:
+`stylelint.config.ts`:
 
-```js
-module.exports = {
-    extends: ['@krudi/stylelint-config'],
-};
-```
+```ts
+import type { Config } from 'stylelint';
 
-`stylelint.config.mjs`:
-
-```js
 export default {
     extends: ['@krudi/stylelint-config'],
-};
+} satisfies Config;
 ```
 
 #### TypeScript
