@@ -5,17 +5,16 @@
     "private": false,
     "description": "Reusable Prettier configuration to enforce consistent formatting across projects.",
     "keywords": [
-        "utils",
-        "helpers",
-        "validation",
-        "zod",
-        "types",
-        "shared",
-        "functions"
+        "prettier",
+        "prettier-config",
+        "formatting",
+        "code-style",
+        "configuration",
+        "shared-config"
     ],
-    "homepage": "https://github.com/krudi/prettier-config/core#readme",
+    "homepage": "https://github.com/krudi/shared-configs#readme",
     "bugs": {
-        "url": "https://github.com/krudi/prettier-config/core/issues"
+        "url": "https://github.com/krudi/shared-configs/issues"
     },
     "repository": {
         "type": "git",
