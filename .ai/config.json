@@ -1,0 +1,43 @@
+{
+    "version": 1,
+    "project": {
+        "name": "shared-configs",
+        "description": "npm monorepo — shared ESLint, Prettier, TypeScript, Stylelint configs for all @krudi/* projects",
+        "type": "npm-monorepo",
+        "status": "active",
+        "blastRadius": "high"
+    },
+    "stack": {
+        "language": "typescript",
+        "runtime": "node",
+        "packageManager": "npm",
+        "buildTool": "turbo"
+    },
+    "packages": [
+        "@krudi/eslint-config",
+        "@krudi/prettier-config",
+        "@krudi/typescript-config",
+        "@krudi/stylelint-config"
+    ],
+    "commands": {
+        "build": "npm run build",
+        "dev": "npm run dev",
+        "lint": "npm run lint",
+        "typecheck": "npm run typecheck",
+        "clean": "npm run clean"
+    },
+    "consumers": [
+        "react-template",
+        "vue-template",
+        "impuls",
+        "krudi-io",
+        "ai-rag-frontend",
+        "shared-styles"
+    ],
+    "docs": {
+        "agentsFile": "AGENTS.md",
+        "claudeFile": "CLAUDE.md",
+        "rules": ".ai/rules/npm-monorepo.md",
+        "lessons": ".ai/memory/lessons.md"
+    }
+}
